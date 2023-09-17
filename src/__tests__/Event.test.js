@@ -44,5 +44,4 @@ describe('<Event /> component', () => {
         userEvent.click(hideDetailsButton);
         expect(EventComponent.queryByText(/Have you wondered how you can ask Google/)).toBeInTheDocument();
       });
-
 });

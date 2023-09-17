@@ -1,3 +1,4 @@
+
 import Event from "./Event";
 
 const EventList = ({ events }) => {
