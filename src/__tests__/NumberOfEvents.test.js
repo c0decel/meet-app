@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/no-render-in-setup */
+/* eslint-disable testing-library/prefer-screen-queries */
 
 import userEvent from '@testing-library/user-event';
 import NumberOfEvents from '../components/NumberOfEvents';
@@ -6,7 +8,7 @@ import {render} from '@testing-library/react';
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents />);
+        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
     });
 
     test('has in input box', () => {
@@ -21,7 +23,7 @@ describe('<NumberOfEvents /> component', () => {
 
     test('updates when a user types', async () => {
        const input = NumberOfEventsComponent.queryByRole('textbox');
-        await userEvent.type(input, '{backspace}{backspace}5');
-        expect(input).toHaveValue('5');
+        await userEvent.type(input, '{backspace}{backspace}10');
+        expect(input).toHaveValue('10');
     });
 });

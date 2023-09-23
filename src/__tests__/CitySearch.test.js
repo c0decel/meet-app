@@ -1,3 +1,7 @@
+/* eslint-disable testing-library/no-render-in-setup */
+/* eslint-disable testing-library/render-result-naming-convention */
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/prefer-screen-queries */
 import {render, within} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { extractLocations, getEvents } from '../api';

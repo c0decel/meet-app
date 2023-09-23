@@ -1,3 +1,8 @@
+/* eslint-disable testing-library/prefer-presence-queries */
+/* eslint-disable testing-library/no-render-in-setup */
+/* eslint-disable testing-library/render-result-naming-convention */
+/* eslint-disable testing-library/prefer-screen-queries */
+/* eslint-disable testing-library/no-node-access */
 import { render, within, waitFor } from '@testing-library/react';
 import { getEvents } from '../api';
 import EventList from '../components/EventList';
