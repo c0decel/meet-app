@@ -2,19 +2,28 @@ import { getEvents } from '../api';
 import { useState } from 'react';
 
 const Event = ({ event }) => {
-  const [showDetails, setShowDetails] = useState(true);
-  const toggleDetails = () => {
-    setShowDetails(!showDetails);
-  };
+  const [showDetails, setShowDetails] = useState(false);
+
     return (
       <li id="event-item">
         <div className='event'>
             <div className='summary'>{event.summary}</div>
             <div className='location'>{event.location}</div>
-           {showDetails && <div className='details'>{event.description}</div> }
-            <button className='detailbutton' onClick={toggleDetails}>
-              {showDetails ? 'Show Details' : 'Hide Details'}
+
+            <button className='detailbutton' onClick={() => {
+          setShowDetails(!showDetails);
+        }}>
+              {showDetails ? 'Hide Details' : 'Show Details'}
             </button>
+
+            {showDetails ? (
+              <div className="details">
+                <h4>Event Details</h4>
+                <p>Description: {event.description}</p>
+                <p>Event status: {event.status}</p>
+              </div>
+            ) : null}
+
         </div>
       </li>
     );

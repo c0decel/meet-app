@@ -29,19 +29,19 @@ describe('<Event /> component', () => {
     });
 
     test('by default, events are hidden', () => {
-      const eventDetails = EventComponent.queryByText("description");
+      const eventDetails = EventComponent.queryByText("Description");
      expect(eventDetails).not.toBeInTheDocument();
    });
 
     test('shows details upon being clicked', () => {
     const showDetailsButton = EventComponent.queryByText('Show Details');
       userEvent.click(showDetailsButton);
-      expect(EventComponent.queryByText(/Have you wondered how you can ask Google/)).toBeInTheDocument();
+      expect(EventComponent.queryByText('Description')).toBeInTheDocument();
     });
 
     test('hides details upon being clicked', () => {
       const hideDetailsButton = EventComponent.queryByText('Hide Details');
         userEvent.click(hideDetailsButton);
-        expect(EventComponent.queryByText(/Have you wondered how you can ask Google/)).toBeInTheDocument();
+        expect(EventComponent.queryByText('Description')).not.toBeInTheDocument();
       });
 });
