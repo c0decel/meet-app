@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Event from '../components/Event';
 import { getEvents } from '../api';
@@ -33,15 +33,15 @@ describe('<Event /> component', () => {
      expect(eventDetails).not.toBeInTheDocument();
    });
 
-    test('shows details upon being clicked', () => {
+   test('shows details upon being clicked', async () => {
     const showDetailsButton = EventComponent.queryByText('Show Details');
-      userEvent.click(showDetailsButton);
-      expect(EventComponent.queryByText('Description')).toBeInTheDocument();
+    await userEvent.click(showDetailsButton);
+    expect(EventComponent.queryByText(/Have you wondered how you can ask Google/)).toBeInTheDocument();
     });
 
-    test('hides details upon being clicked', () => {
+    test('hides details upon being clicked', async () => {
       const hideDetailsButton = EventComponent.queryByText('Hide Details');
-        userEvent.click(hideDetailsButton);
-        expect(EventComponent.queryByText('Description')).not.toBeInTheDocument();
+        await userEvent.click(hideDetailsButton);
+        expect(EventComponent.queryByText(/Have you wondered how you can ask Google/)).not.toBeInTheDocument();
       });
 });
