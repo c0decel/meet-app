@@ -41,6 +41,14 @@ button {
   width: 250px;
 }
 
+.suggestions {
+  background-color: #d8ffff;
+  border: 3px solid #000000;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 200px;
+}
+
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;

@@ -1,3 +1,6 @@
+/* eslint-disable testing-library/prefer-presence-queries */
+/* eslint-disable testing-library/no-render-in-setup */
+/* eslint-disable testing-library/prefer-screen-queries */
 import { render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Event from '../components/Event';
