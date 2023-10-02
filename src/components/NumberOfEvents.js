@@ -1,7 +1,15 @@
-const NumberOfEvents = ({ setCurrentNOE }) => {
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const handleInputChanged = (event) => {
       const value = event.target.value;
       setCurrentNOE(value);
+
+      let errorText;
+      if (isNaN(value)) {
+        errorText = "Invalid input, numbers only"
+      } else {
+        errorText=""
+      }
+      setErrorAlert(errorText)
     };
   
     return (

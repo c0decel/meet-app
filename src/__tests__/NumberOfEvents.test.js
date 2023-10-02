@@ -8,7 +8,10 @@ import {render} from '@testing-library/react';
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
+        NumberOfEventsComponent = render(<NumberOfEvents
+            setCurrentNOE={() => {}}
+            setErrorAlert={() => { }}  
+            />);
     });
 
     test('has in input box', () => {

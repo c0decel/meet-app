@@ -67,3 +67,11 @@ button {
 .title {
   font-size: 75px;
 }
+
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
