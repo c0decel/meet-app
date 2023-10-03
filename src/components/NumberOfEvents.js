@@ -4,8 +4,8 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
       setCurrentNOE(value);
 
       let errorText;
-      if (isNaN(value)) {
-        errorText = "Invalid input, numbers only"
+      if (isNaN(value) || value <= 0) {
+        errorText = "Invalid input, positive numbers only"
       } else {
         errorText=""
       }
