@@ -1,7 +1,10 @@
+body {
+  background-color: #da9bff;
+}
+
 .App {
   text-align: center;
   padding: 40px;
-  background-color: #da9bff;
 }
 
 .App * {
