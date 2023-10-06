@@ -2,7 +2,7 @@
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
-import { InfoAlert, ErrorAlert } from './components/Alert';
+import { InfoAlert, ErrorAlert, OfflineAlert } from './components/Alert';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { extractLocations, getEvents } from './api';
@@ -14,6 +14,7 @@ const App = () => {
   const [currentCity, setCurrentCity] = useState('See all cities');
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [offlineAlert, setOfflineAlert] = useState("");
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -26,6 +27,13 @@ const App = () => {
   };
 
   useEffect(() => {
+    let offlineText;
+    if (navigator.onLine) {
+      offlineText = ""
+    } else {
+      offlineText = "No network connection, this is a cached version"
+    }
+    setOfflineAlert(offlineText);
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -45,7 +53,9 @@ const App = () => {
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
       />
-      <EventList events={events} />
+      <EventList
+        events={events}
+      />
     </div>
   );
 };
