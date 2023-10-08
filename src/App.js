@@ -2,6 +2,7 @@
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
+import CityEventsChart from './components/CityEventsChart';
 import { InfoAlert, ErrorAlert, OfflineAlert } from './components/Alert';
 import './App.css';
 import { useState, useEffect } from 'react';
@@ -53,6 +54,10 @@ const App = () => {
       <NumberOfEvents 
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
+      />
+      <CityEventsChart
+        allLocations={allLocations}
+        events={events}
       />
       <EventList
         events={events}

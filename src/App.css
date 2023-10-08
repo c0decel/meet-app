@@ -78,3 +78,8 @@ button {
   width: 250px;
   z-index: 1000;
 }
+
+.chart {
+  background-color: #d8ffff;
+  border: 3px solid #000000;
+} 
