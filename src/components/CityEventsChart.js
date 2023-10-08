@@ -29,7 +29,7 @@ const CityEventsChart = ({ allLocations, events }) => {
               top: 20,
               right: 20,
               bottom: 75,
-              left: -30,
+              left: -10,
             }}
           >
             <CartesianGrid />
