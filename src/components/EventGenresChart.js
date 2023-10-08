@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { useState, useEffect } from 'react';
 
 
@@ -59,7 +59,7 @@ const EventGenresChart = ({ events }) => {
             >
                 
                 {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell key={`cell-${index}`} fill={COLORS[index]} />
             ))}
           </Pie>
           </PieChart>
